@@ -1,0 +1,25 @@
+﻿@model Group001Bookstore.MVC.Models.CSBook
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Detail</title>
+</head>
+<body>
+    <div>
+        <h2>The Detail of CS Book #@Model.Id</h2>
+        @using (Html.BeginForm("Detail", "CSBook", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.HiddenFor(b => b.Id)<br />
+            @Html.HiddenFor(b => b.CoverImagePath)<br />
+            @Html.LabelFor(b => b.Name)@Html.TextBoxFor(b => b.Name)<br />
+            @Html.LabelFor(b => b.Price)@Html.TextBoxFor(b => b.Price)<br />
+            @Html.LabelFor(b => b.Author)@Html.TextBoxFor(b => b.Author)<br />
+            <label>Cover</label><input type="file" name="Cover" />
+            <input type="submit" value="Update" />
+        }
+    </div>
+</body>
+</html>

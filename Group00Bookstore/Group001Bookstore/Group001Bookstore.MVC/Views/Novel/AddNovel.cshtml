@@ -1,0 +1,26 @@
+﻿@model Group001Bookstore.MVC.Models.NovelBook
+@{ Layout = "~/Views/Shared/_Layout.cshtml";}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddNovel</title>
+</head>
+<body>
+    <div>
+        <h3>Add Novel</h3>
+        @using (Html.BeginForm("Add", "Novel", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.LabelFor(m => m.Name)@Html.TextBoxFor(m => m.Name)<br />
+            @Html.LabelFor(m => m.Price)@Html.TextBoxFor(m => m.Price)<br />
+            @Html.LabelFor(m => m.Year)@Html.TextBoxFor(m => m.Year)<br />
+            @Html.LabelFor(m => m.Rate)@Html.TextBoxFor(m => m.Rate)<<br />
+                @Html.LabelFor(m => m.Author)@Html.TextBoxFor(m => m.Author)<br />
+                <label>Cover</label><input type="file" name="cover" />
+                <input type="submit" value="update" />
+        }
+    </div>
+</body>
+</html>

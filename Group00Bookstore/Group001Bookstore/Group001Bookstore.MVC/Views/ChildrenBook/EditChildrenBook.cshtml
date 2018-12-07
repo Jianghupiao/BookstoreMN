@@ -1,0 +1,29 @@
+﻿@model Group001Bookstore.MVC.Models.ChildrenBook
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EditChildrenBook</title>
+</head>
+<body>
+    <div> 
+        <h2>The detail of the ChildrenBooks @Model.Id</h2>
+        @using (Html.BeginForm("Edit", "ChildrenBook", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.HiddenFor(b => b.Id)<br />
+            @Html.HiddenFor(b => b.CoverImagePath)<br/>
+            @Html.LabelFor(b => b.Name)@Html.TextBoxFor(b => b.Name)<br />
+            @Html.LabelFor(b => b.Price)@Html.TextBoxFor(b => b.Price)<br />
+            @Html.LabelFor(b => b.Author)@Html.TextBoxFor(b => b.Author)<<br />
+            @Html.LabelFor(b => b.Year)@Html.TextBoxFor(b => b.Year)<br />
+            @Html.LabelFor(b=>b.Description)@Html.TextBoxFor(b=>b.Description)<br/>
+           @Html.HiddenFor(b=>b.UniqueId)
+            <label>Cover</label><input type="file" name="cover"/><br/>
+            <input type="submit" value="Update " /><br/>
+
+        }
+    </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+﻿
+@model List<Group001Bookstore.MVC.Models.EconomicsBook>
+@{ Layout = "~/Views/Shared/_Layout.cshtml";}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>BookList</title>
+</head>
+<body>
+    <div>
+        <h1>Economics books</h1>
+        <table border="1">
+            <tr>
+                <th>Cat.#</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Cover page</th>
+                <th>Authors</th>
+                @*<th>Rate</th>
+                    <th>Edit</th>*@
+                <th>Add to Cart</th>
+
+            </tr>
+            @foreach (var book in this.Model)
+            {
+                <tr>
+                    <td>@book.UniqueId</td>
+                    <td>@book.Name</td>
+                    <td>$@book.Price</td>
+                    <td><img src="@Url.Content(book.CoverImagePath)" alt="@book.Name" /></td>
+                    <td>@book.Author</td>
+                    @*<td>@book.Rate</td>
+                        <td>@Html.ActionLink("Edit", "Edit", new { id = book.Id })</td>*@
+                    <td>@Html.ActionLink("Add to Cart", "AddToCart", new { uniqueId = book.UniqueId })</td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>

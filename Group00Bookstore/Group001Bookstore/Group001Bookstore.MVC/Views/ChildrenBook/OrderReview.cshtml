@@ -1,0 +1,28 @@
+﻿@model Group001Bookstore.MVC.Models.ChildrenBook
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CartChildrenBook</title>
+</head>
+<body>
+    <div>
+        <h2>Add this book to your shopping cart</h2>
+        @using (Html.BeginForm("AddToCart", "ChildrenBook"))
+        {
+            @Html.Hidden("BookName", this.Model.Name)
+            @Html.Hidden("BookPrice", this.Model.Price)
+            <div>Book Name:@Model.Name</div>
+            <div>Book Price:@Model.Price</div>
+            <div>Please input the amount:</div>@Html.TextBox("BookAmount")<br />
+            <div>Please input your User Id:</div>@Html.TextBox("UserId")<br />
+            <input type="submit" value="Add to cart " />
+        }
+
+
+    </div>
+</body>
+</html>

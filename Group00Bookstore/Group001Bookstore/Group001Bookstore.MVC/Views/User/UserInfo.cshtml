@@ -1,0 +1,23 @@
+﻿@model Group001Bookstore.MVC.Models.User
+@{ Layout = "~/Views/Shared/_Layout.cshtml";}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UserInfo</title>
+</head>
+<body>
+    <div>
+        <h2>Welcome, @Model.FirstName!</h2>
+        <h3>Congratulations! Your user account is created/modified!</h3>
+        <h2>Your User Id is @Model.Id</h2>
+        <h5>(Please remember your User Id, as you will need it later when you buy books or view your card.)</h5>
+        <hr />
+        <h3>If your information is correct, start enjoy your book shopping! </h3>
+        <h3>Otherwise, please click @Html.ActionLink("modify", "UserInfoUpdate", "User") to update your account infomation.</h3>
+        @Html.ActionLink("View books", "Index", "Home")
+    </div>
+</body>
+</html>

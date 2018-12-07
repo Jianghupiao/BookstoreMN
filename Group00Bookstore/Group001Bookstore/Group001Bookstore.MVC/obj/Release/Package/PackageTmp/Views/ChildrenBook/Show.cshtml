@@ -1,0 +1,49 @@
+﻿
+@model  List< Group001Bookstore.MVC.Models.ChildrenBook>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Show</title>
+</head>
+<body>
+    <div> 
+        <h1>Here are the Children books list:</h1>
+        <table  border="1">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Author</th>
+                <th>Year</th>
+                <th>BookCover</th>
+                <th>Description</th>
+                @*<th>Edit</th>*@
+                @*<th>Delete</th>*@
+                @*<th>Rate</th>*@
+                <th>UniqueId</th>
+                <th>Add to Cart</th>
+               </tr>
+            @foreach (var book in this.Model)
+            {
+                <tr>
+                    <td>@book.Id</td>
+                    <td>@book.Name</td>
+                    <td>@book.Price</td>
+                    <td>@book.Author</td>
+                    <td>@book.Year</td>
+                    <td><img src="@Url.Content(book.CoverImagePath)" alt="@book.Name" /></td>
+                    <td>@book.Description</td>
+                    @*<td>@Html.ActionLink("Edit","Edit", new {id=book.Id})</td>*@
+                    @*<td>@book.Delete</td>*@
+                   @* <td>@book.Rate</td>*@
+                    <td>@book.UniqueId</td>
+                    <td>@Html.ActionLink("Add to cart","AddToCart", new { uniqueId=book.UniqueId})</td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="MichelleBookstoreNew" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^F:\\TFS\\SRC\\Group001Bookstore\\Group001Bookstore\\Group001Bookstore\.MVC\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^F:\\TFS\\SRC\\Group001Bookstore\\Group001Bookstore\\Group001Bookstore\.MVC\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="Group001Bookstore.MVC.Models.Group001BookstoreEntities-Web.config Connection String" description="" value="Data Source=tcp:desktop-o67cn0h.database.windows.net,1433;Initial Catalog=Group001Bookstore;User ID=Labixiaoxin@desktop-o67cn0h.database.windows.net;Password=Hatongma.123" tags="" />
+  <parameter name="Group001BookstoreEntities-Web.config Connection String" description="Group001BookstoreEntities Connection String used in web.config by the application to access the database." value="Server=tcp:desktop-o67cn0h.database.windows.net,1433;Initial Catalog=Group001Bookstore;Persist Security Info=False;User ID={your_username};Password={your_password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="F:\\TFS\\SRC\\Group001Bookstore\\Group001Bookstore\\Group001Bookstore\.MVC\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Group001BookstoreEntities']/@connectionString" />
+  </parameter>
+</parameters>

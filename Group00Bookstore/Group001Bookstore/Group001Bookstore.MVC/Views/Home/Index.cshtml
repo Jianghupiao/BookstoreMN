@@ -1,0 +1,48 @@
+﻿@{ Layout = "~/Views/Shared/_Layout.cshtml";}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <style>
+        #rightsection {
+            background-image: url(/Images/dragon.jpg);
+            opacity: 0.5;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            color: white;
+            font-size: xx-large;
+        }
+
+            #rightsection p {
+                font-size: large;
+                color: black;
+            }
+    </style>
+</head>
+
+<body>
+    <p>
+        Welcome to the dragon bookstore! We have three categories of top-rated books, which are Computer Science,
+        Economics and Novel books. Please take time to explore around. You can register as a user, modify your account,
+        and update your shopping cart at any time.
+    </p>
+    <br /><br />
+    <p>
+        @Html.ActionLink("Economics books", "BookList", "EconomicsBook")<br /><br />
+    </p>
+    <p>
+        @Html.ActionLink("Novel books", "Show", "Novel", new { pageNumber = 1 }, null)<br /><br />
+    </p>
+    <p>
+        @Html.ActionLink("CS books", "Show", "CSBook")<br /><br />
+        
+    </p>
+    <p>
+        @Html.ActionLink("Children books", "Show", "ChildrenBook")<br /><br/>
+    </p>
+</body>
+</html>

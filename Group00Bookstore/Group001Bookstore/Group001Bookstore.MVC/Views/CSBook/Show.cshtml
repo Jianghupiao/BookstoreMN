@@ -1,0 +1,40 @@
+﻿@model List<Group001Bookstore.MVC.Models.CSBook>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowAllCSBook</title>
+</head>
+<body>
+    <div>
+        <h1>All CS Book List</h1>
+        <table border="1">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Cover</th>
+                <th>Author</th>
+                @*<th>Rate</th>
+                    <th>Detail</th>*@
+                <th>Add to Cart</th>
+            </tr>
+            @foreach (var book in Model)
+            {
+                <tr>
+                    <td>@book.Id</td>
+                    <td>@book.Name</td>
+                    <td>@book.Price</td>
+                    <td><img src="@Url.Content(book.CoverImagePath)" alt="@book.Name" /></td>
+                    <td>@book.Author</td>
+                    @*<td>@book.Rate</td>
+                        <td>@Html.ActionLink("Detail","Detail", new { id=book.Id})</td>*@
+                    <td>@Html.ActionLink("Add to Cart", "AddToCart", new { uniqueId = book.UniqueId })</td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>
